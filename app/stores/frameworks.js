@@ -32,6 +32,7 @@ class Frameworks {
   }
 
   @computed get filteredItems():Framework[] {
+    console.log('calculate filteredItems');
     if (!this.filter) return this.items;
 
     const regexp = new RegExp(this.filter, 'i');
@@ -39,10 +40,12 @@ class Frameworks {
   }
 
   @computed get selectedItems() {
+    console.log('calculate selectedItems');
     return this.items.filter((item) => item.checked);
   }
 
   @computed get isAllChecked() {
+    console.log('calculate isAllChecked');
     for (const item of this.filteredItems) {
       if (!item.checked) return false;
     }
