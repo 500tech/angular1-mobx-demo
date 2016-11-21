@@ -1,4 +1,4 @@
-import { observable, computed, action } from 'mobx';
+import { observable, computed, action, spy } from 'mobx';
 
 class Framework {
   @observable checked;
@@ -58,3 +58,4 @@ class Frameworks {
 }
 
 export const frameworks = new Frameworks();
+window.frameworks = frameworks;
